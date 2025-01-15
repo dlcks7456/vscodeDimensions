@@ -1,0 +1,65 @@
+{
+  "name": "vscodedimensions",
+  "displayName": "dimensions-niq-package",
+  "description": "Snippets and Shourt Cur for Dimensions Programming in VS Code",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:vb"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "dimensions-niq-package.changeLabelCode",
+        "title": "Code/Label 위치 스위칭"
+      },
+      {
+        "command": "decipher-niq-package.makeColsMatchValueCommand",
+        "title": "Value와 매칭하여 코드 생성"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "dimensions-niq-package.changeLabelCode",
+        "key": "ctrl+0",
+        "when": "editorTextFocus && editorLangId == 'vb'"
+      },
+      {
+        "command": "dimensions-niq-package.makeColsMatchValueCommand",
+        "key": "ctrl+7",
+        "when": "editorTextFocus && editorLangId == 'vb'"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test",
+    "build": "tsc",
+    "package": "vsce package && (if not exist version mkdir version) && move decipher-niq-package-*.vsix version/",
+    "publish": "vsce publish"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.96.0",
+    "@typescript-eslint/eslint-plugin": "^8.17.0",
+    "@typescript-eslint/parser": "^8.17.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.16.0",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "vsce": "^2.15.0"
+  }
+}
