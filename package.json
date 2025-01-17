@@ -1,6 +1,6 @@
 {
   "name": "vscodedimensions",
-  "displayName": "dimensions-niq-package",
+  "displayName": "Dimensions NIQ Package",
   "description": "Snippets and Shourt Cur for Dimensions Programming in VS Code",
   "version": "0.0.1",
   "engines": {
@@ -20,8 +20,44 @@
         "title": "Code/Label 위치 스위칭"
       },
       {
-        "command": "decipher-niq-package.makeColsMatchValueCommand",
+        "command": "dimensions-niq-package.makeCodesOrder",
+        "title": "Code 생성 (순차 코드 부여)"
+      },
+      {
+        "command": "dimensions-niq-package.makeCodesMatchValue",
         "title": "Value와 매칭하여 코드 생성"
+      },
+      {
+        "command": "dimensions-niq-package.makeRadio",
+        "title": "Make Radio"
+      },
+      {
+        "command": "dimensions-niq-package.makeCheckbox",
+        "title": "Make Checkbox"
+      },
+      {
+        "command": "dimensions-niq-package.makeNumber",
+        "title": "Make Number Input"
+      },
+      {
+        "command": "dimensions-niq-package.makeFloat",
+        "title": "Make Float Input"
+      },
+      {
+        "command": "dimensions-niq-package.makeText",
+        "title": "Make Text Input"
+      },
+      {
+        "command": "dimensions-niq-package.makeTextArea",
+        "title": "Make Text Area"
+      },
+      {
+        "command": "dimensions-niq-package.makeInfo",
+        "title": "Make Info Section"
+      },
+      {
+        "command": "dimensions-niq-package.makeDatePicker",
+        "title": "Make Date Picker"
       }
     ],
     "keybindings": [
@@ -31,8 +67,53 @@
         "when": "editorTextFocus && editorLangId == 'vb'"
       },
       {
-        "command": "dimensions-niq-package.makeColsMatchValueCommand",
+        "command": "dimensions-niq-package.makeCodesOrder",
+        "key": "ctrl+1",
+        "when": "editorTextFocus && editorLangId == 'vb'"
+      },
+      {
+        "command": "dimensions-niq-package.makeCodesMatchValue",
         "key": "ctrl+7",
+        "when": "editorTextFocus && editorLangId == 'vb'"
+      },
+      {
+        "command": "dimensions-niq-package.makeRadio",
+        "key": "ctrl+r",
+        "when": "editorTextFocus && editorLangId == 'vb'"
+      },
+      {
+        "command": "dimensions-niq-package.makeCheckbox",
+        "key": "ctrl+shift+c",
+        "when": "editorTextFocus && editorLangId == 'vb'"
+      },
+      {
+        "command": "dimensions-niq-package.makeNumber",
+        "key": "ctrl+n",
+        "when": "editorTextFocus && editorLangId == 'vb'"
+      },
+      {
+        "command": "dimensions-niq-package.makeFloat",
+        "key": "ctrl+shift+f",
+        "when": "editorTextFocus && editorLangId == 'vb'"
+      },
+      {
+        "command": "dimensions-niq-package.makeText",
+        "key": "ctrl+t",
+        "when": "editorTextFocus && editorLangId == 'vb'"
+      },
+      {
+        "command": "dimensions-niq-package.makeTextArea",
+        "key": "ctrl+shift+t",
+        "when": "editorTextFocus && editorLangId == 'vb'"
+      },
+      {
+        "command": "dimensions-niq-package.makeInfo",
+        "key": "ctrl+i",
+        "when": "editorTextFocus && editorLangId == 'vb'"
+      },
+      {
+        "command": "dimensions-niq-package.makeDatePicker",
+        "key": "ctrl+shift+d",
         "when": "editorTextFocus && editorLangId == 'vb'"
       }
     ]
@@ -45,7 +126,7 @@
     "lint": "eslint src",
     "test": "vscode-test",
     "build": "tsc",
-    "package": "vsce package && (if not exist version mkdir version) && move decipher-niq-package-*.vsix version/",
+    "package": "vsce package && (if not exist version mkdir version) && move dimensions-niq-package-*.vsix version/",
     "publish": "vsce publish"
   },
   "devDependencies": {
