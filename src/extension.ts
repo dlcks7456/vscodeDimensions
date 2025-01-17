@@ -109,7 +109,7 @@ function metaDataSetting(
   let attributesText = attributes === null ? `` : `\n{\n\t${attributes}\n}`;
   let metaDataText = `'<${qname} type="${qtype}">
 ${qname} "${title}"${extra}
-${defaultType}${attributesText}
+${defaultType}${attributesText};
 '</${qname}>
 `;
   return metaDataText;
