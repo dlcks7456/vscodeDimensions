@@ -4,11 +4,18 @@
   "description": "Snippets and Shourt Cur for Dimensions Programming in VS Code",
   "version": "0.0.1",
   "icon": "images/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dlcks7456/vscodeDimensions"
+  },
   "engines": {
     "vscode": "^1.96.0"
   },
   "categories": [
     "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:vb"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -179,7 +186,7 @@
     "lint": "eslint src",
     "test": "vscode-test",
     "build": "tsc",
-    "package": "vsce package && (if not exist version mkdir version) && move dimensions-niq-package-*.vsix version/",
+    "package": "vsce package && (if not exist version mkdir version) && move vscodedimensions-*.vsix version/",
     "publish": "vsce publish"
   },
   "devDependencies": {
@@ -194,6 +201,7 @@
     "typescript": "^5.7.2"
   },
   "dependencies": {
+    "punycode": "^2.3.1",
     "vsce": "^2.15.0"
   }
 }

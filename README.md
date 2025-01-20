@@ -1,71 +1,39 @@
-# vscodedimensions README
+# Dimensions VS Code Extension
 
-This is the README for your extension "vscodedimensions". After writing up a brief description, we recommend including the following sections.
+This is a VS Code extension for Dimensions programming. It enhances the development experience by providing various features for `.vb` and `.mdd` files.
 
-## Features
+## Key Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- Syntax highlighting for `.vb` and `.mdd` files
+- Auto-completion based on file extensions
+- Snippet support to boost coding efficiency
+- Keyboard shortcuts for efficient work (to be updated soon)
 
-For example if there is an image subfolder under your extension project workspace:
+## Installation
 
-\!\[feature X\]\(images/feature-x.png\)
+1. Search for the `Dimensions` extension in the **Extensions** marketplace of VS Code.
+2. Install the extension and restart VS Code.
+3. Open `.vb` and `.mdd` files to check the extension's features.
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## Usage
 
-## Requirements
+- Open `.vb` and `.mdd` files to utilize auto-completion and code snippets.
+- Keyboard shortcuts will be updated soon.
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+## Supported Features
 
-## Extension Settings
+| Feature             | Supported File Extensions |
+| ------------------- | ------------------------- |
+| Syntax Highlighting | `.vb`, `.mdd`             |
+| Auto Completion     | `.vb`, `.mdd`             |
+| Snippet Support     | `.vb`, `.mdd`             |
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+## Keyboard Shortcuts Guide
 
-For example:
+Keyboard shortcut details will be updated soon.
 
-This extension contributes the following settings:
+##
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+## License
 
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+For license information, please contact [Chan.lee@nielseniq.com](mailto:Chan.lee@nielseniq.com) (NIQ KOR).
