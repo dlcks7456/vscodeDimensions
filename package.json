@@ -9,11 +9,35 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [
-    "onLanguage:vb"
-  ],
   "main": "./out/extension.js",
   "contributes": {
+    "activationEvents": [
+      "onLanguage:vb",
+      "onStartupFinished"
+    ],
+    "completionItemProvider": [
+      {
+        "language": "vb",
+        "triggerCharacters": [
+          "",
+          " ",
+          "."
+        ],
+        "provideCompletionItems": true
+      }
+    ],
+    "languages": [
+      {
+        "id": "vb",
+        "extensions": [
+          ".mdd"
+        ],
+        "aliases": [
+          "VB.NET"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
     "commands": [
       {
         "command": "dimensions-niq-package.changeLabelCode",
@@ -58,62 +82,80 @@
       {
         "command": "dimensions-niq-package.makeDatePicker",
         "title": "Make Date Picker"
+      },
+      {
+        "command": "dimensions-niq-package.routingModeChange",
+        "title": "Routing Mode Change"
+      },
+      {
+        "command": "dimensions-niq-package.findMatchingLabel",
+        "title": "Search Question (e.g <Q1> ~ </Q1>)"
       }
     ],
     "keybindings": [
       {
         "command": "dimensions-niq-package.changeLabelCode",
         "key": "ctrl+0",
-        "when": "editorTextFocus && editorLangId == 'vb'"
+        "when": "editorTextFocus && editorLangId == 'vb' && resourceExtname == '.mdd'"
       },
       {
         "command": "dimensions-niq-package.makeCodesOrder",
         "key": "ctrl+1",
-        "when": "editorTextFocus && editorLangId == 'vb'"
+        "when": "editorTextFocus && editorLangId == 'vb' && resourceExtname == '.mdd'"
       },
       {
         "command": "dimensions-niq-package.makeCodesMatchValue",
         "key": "ctrl+7",
-        "when": "editorTextFocus && editorLangId == 'vb'"
+        "when": "editorTextFocus && editorLangId == 'vb' && resourceExtname == '.mdd'"
       },
       {
         "command": "dimensions-niq-package.makeRadio",
         "key": "ctrl+r",
-        "when": "editorTextFocus && editorLangId == 'vb'"
+        "when": "editorTextFocus && editorLangId == 'vb' && resourceExtname == '.mdd'"
       },
       {
         "command": "dimensions-niq-package.makeCheckbox",
         "key": "ctrl+shift+c",
-        "when": "editorTextFocus && editorLangId == 'vb'"
+        "when": "editorTextFocus && editorLangId == 'vb' && resourceExtname == '.mdd'"
       },
       {
         "command": "dimensions-niq-package.makeNumber",
         "key": "ctrl+n",
-        "when": "editorTextFocus && editorLangId == 'vb'"
+        "when": "editorTextFocus && editorLangId == 'vb' && resourceExtname == '.mdd'"
       },
       {
         "command": "dimensions-niq-package.makeFloat",
         "key": "ctrl+shift+f",
-        "when": "editorTextFocus && editorLangId == 'vb'"
+        "when": "editorTextFocus && editorLangId == 'vb' && resourceExtname == '.mdd'"
       },
       {
         "command": "dimensions-niq-package.makeText",
         "key": "ctrl+t",
-        "when": "editorTextFocus && editorLangId == 'vb'"
+        "when": "editorTextFocus && editorLangId == 'vb' && resourceExtname == '.mdd'"
       },
       {
         "command": "dimensions-niq-package.makeTextArea",
         "key": "ctrl+shift+t",
-        "when": "editorTextFocus && editorLangId == 'vb'"
+        "when": "editorTextFocus && editorLangId == 'vb' && resourceExtname == '.mdd'"
       },
       {
         "command": "dimensions-niq-package.makeInfo",
         "key": "ctrl+i",
-        "when": "editorTextFocus && editorLangId == 'vb'"
+        "when": "editorTextFocus && editorLangId == 'vb' && resourceExtname == '.mdd'"
       },
       {
         "command": "dimensions-niq-package.makeDatePicker",
         "key": "ctrl+shift+d",
+        "when": "editorTextFocus && editorLangId == 'vb' && resourceExtname == '.mdd'"
+      },
+      {
+        "command": "dimensions-niq-package.routingModeChange",
+        "key": "ctrl+shift+`",
+        "when": "editorTextFocus && editorLangId == 'vb' && resourceExtname == '.mdd'"
+      },
+      {
+        "command": "dimensions-niq-package.findMatchingLabel",
+        "key": "ctrl+alt+f",
         "when": "editorTextFocus && editorLangId == 'vb'"
       }
     ]
