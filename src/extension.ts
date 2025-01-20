@@ -775,6 +775,13 @@ export function activate(context: vscode.ExtensionContext) {
                 'setTerminationsStatus(IOM, {_$1}, "$2")'
               ),
             },
+            {
+              label: 'section',
+              detail: '(Block) Section',
+              insertText: new vscode.SnippetString(
+                'section ${1:sectionName}\n\t$0\nend section'
+              ),
+            },
           ];
 
           suggestions = suggestions.concat(dimensionsSuggestions);
