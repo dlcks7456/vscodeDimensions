@@ -359,7 +359,63 @@ function generateHtml(matches: string[]): string {
   `;
 }
 
+class HexColorProvider implements vscode.DocumentColorProvider {
+  // Detect HEX codes in the document
+  public provideDocumentColors(
+    document: vscode.TextDocument
+  ): vscode.ColorInformation[] {
+    const hexColorRegex = /#[0-9a-fA-F]{6}\b/g; // Matches HEX codes
+    const text = document.getText();
+    const matches = [...text.matchAll(hexColorRegex)];
+
+    return matches.map((match) => {
+      const start = document.positionAt(match.index!);
+      const end = document.positionAt(match.index! + match[0].length);
+      const color = this.hexToColor(match[0]);
+      return new vscode.ColorInformation(new vscode.Range(start, end), color);
+    });
+  }
+
+  // Generate HEX code for the selected color
+  public provideColorPresentations(
+    color: vscode.Color,
+    context: { range: vscode.Range }
+  ): vscode.ColorPresentation[] {
+    const hex = this.colorToHex(color);
+    return [new vscode.ColorPresentation(hex)];
+  }
+
+  // Convert HEX string to vscode.Color
+  private hexToColor(hex: string): vscode.Color {
+    const r = parseInt(hex.substr(1, 2), 16) / 255;
+    const g = parseInt(hex.substr(3, 2), 16) / 255;
+    const b = parseInt(hex.substr(5, 2), 16) / 255;
+    return new vscode.Color(r, g, b, 1); // Alpha is set to 1 (fully opaque)
+  }
+
+  // Convert vscode.Color to HEX string
+  private colorToHex(color: vscode.Color): string {
+    const r = Math.round(color.red * 255)
+      .toString(16)
+      .padStart(2, '0');
+    const g = Math.round(color.green * 255)
+      .toString(16)
+      .padStart(2, '0');
+    const b = Math.round(color.blue * 255)
+      .toString(16)
+      .padStart(2, '0');
+    return `#${r}${g}${b}`;
+  }
+}
+
 export function activate(context: vscode.ExtensionContext) {
+  // Register the Color Provider
+  const colorProvider = vscode.languages.registerColorProvider(
+    { language: 'vb', scheme: 'file' },
+    new HexColorProvider()
+  );
+  context.subscriptions.push(colorProvider);
+
   // Auto Suggestions Setting
   let provider = vscode.languages.registerCompletionItemProvider(
     { scheme: 'file', language: 'vb' },

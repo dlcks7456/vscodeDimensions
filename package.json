@@ -3,6 +3,7 @@
   "displayName": "Dimensions NIQ Package",
   "description": "Snippets and Shourt Cur for Dimensions Programming in VS Code",
   "version": "0.0.1",
+  "icon": "images/icon.png",
   "engines": {
     "vscode": "^1.96.0"
   },
@@ -11,6 +12,16 @@
   ],
   "main": "./out/extension.js",
   "contributes": {
+    "colors": [
+      {
+        "id": "vb.colorProvider",
+        "description": "Color provider for VB/MDD files",
+        "defaults": {
+          "light": "#FFFFFF",
+          "dark": "#000000"
+        }
+      }
+    ],
     "activationEvents": [
       "onLanguage:vb",
       "onStartupFinished"
