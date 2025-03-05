@@ -2,6 +2,7 @@
   "name": "vscodedimensions",
   "displayName": "Dimensions NIQ Package",
   "description": "Snippets and Shourt Cur for Dimensions Programming in VS Code",
+  "publisher": "NIQ KOR SUD. Chan.Lee",
   "version": "0.0.1",
   "icon": "images/icon.png",
   "repository": {
